@@ -18,3 +18,4 @@
 - **clovax_completion_executor.py**: 다른 모듈에서 활용하는 모듈입니다. Clovax와 연동하여 사용자 대화에 응답합니다. (단독으로 실행 가능하며 실행 시 LLM과 대화할 수 있습니다.)
 - **clovax_embedding_executor.py**: 다른 모듈에서 활용하는 모듈입니다. Clovax와 연동하여 일반 텍스트를 벡터 데이터로 변경해 줍니다. (단독으로 실행 가능하며 실행 시 입력한 텍스트에 대한 벡터 정보를 보여 줍니다.)
 - **logging_config.py**: 로깅 처리를 위한 단순한 기능입니다.
+- ****app.ini 파일의 일부 내용(update with your information 로 표기된 부분) 은 clovax 본인 계정 정보에 맞게 수정해야 합니다.****
