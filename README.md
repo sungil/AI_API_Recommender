@@ -1,9 +1,9 @@
-# AI_API_Recommender 기능
+## AI_API_Recommender 소개
 - 네이버 Clovax의 Completion, Embedding API를 활용한 RAG 구현
 - data.go.kr 에서 제공하는 1만 2천여 건의 공공 API를 Embedding 하여 HCX-003 모델을 통해 질문하는 내용에 대한 API 정보를 제공함
 - ex) 아이를 낳고 기르면서 도움이 될만한 앱을 만들고 싶은데 추천해줄 API가 있을까?
 
-## 셋팅
+## 필요 설정
 - Pipfile, Pipfile.lock, requirements.txt 파일을 참조하여 가상 환경을 설정
 - API 관련 벡터 데이터를 저장하기 위한 Vector DB 설치 필요
   - `https://github.com/milvus-io/milvus/releases/download/v2.3.1/milvus-standalone-docker-compose.yml -O docker-compose.yml` 에서 Milvus 도커 설치를 위한 compose 파일 다운로드
@@ -18,4 +18,4 @@
 - **clovax_completion_executor.py**: 다른 모듈에서 활용하는 모듈입니다. Clovax와 연동하여 사용자 대화에 응답합니다. (단독으로 실행 가능하며 실행 시 LLM과 대화할 수 있습니다.)
 - **clovax_embedding_executor.py**: 다른 모듈에서 활용하는 모듈입니다. Clovax와 연동하여 일반 텍스트를 벡터 데이터로 변경해 줍니다. (단독으로 실행 가능하며 실행 시 입력한 텍스트에 대한 벡터 정보를 보여 줍니다.)
 - **logging_config.py**: 로깅 처리를 위한 단순한 기능입니다.
-- ****app.ini 파일의 일부 내용(update with your information 로 표기된 부분) 은 clovax 본인 계정 정보에 맞게 수정해야 합니다.****
+- **app.ini 파일의 일부 내용(update with your information 로 표기된 부분) 은 clovax 본인 계정 정보에 맞게 수정해야 합니다.**
