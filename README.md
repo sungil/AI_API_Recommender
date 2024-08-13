@@ -6,7 +6,7 @@
 ## 필요 설정
 - Pipfile, Pipfile.lock, requirements.txt 파일을 참조하여 가상 환경을 설정
 - API 관련 벡터 데이터를 저장하기 위한 Vector DB 설치 필요
-  - `https://github.com/milvus-io/milvus/releases/download/v2.3.1/milvus-standalone-docker-compose.yml -O docker-compose.yml` 에서 Milvus 도커 설치를 위한 compose 파일 다운로드
+  - https://github.com/milvus-io/milvus/releases 에서 Milvus 도커 설치를 위한 milvus-standalone-docker-compose.yml 파일 다운로드
   - 해당 파일로 Docker 설치를 위해 Docker, Docker Desktop 설치가 필요함 (설명 생략)
   - `docker compose up -d` (compose 파일이 있는 디렉토리에서 실행)
   - Milvus DB Docker 실행 확인
