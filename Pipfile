@@ -25,6 +25,10 @@ tqdm = "*"
 tzdata = "*"
 ujson = "*"
 urllib3 = "*"
+streamlit = "*"
+matplotlib = "*"
+gwpy = "*"
+helper = "*"
 
 [dev-packages]
 
