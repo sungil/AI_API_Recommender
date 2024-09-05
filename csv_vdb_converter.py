@@ -1,6 +1,6 @@
 import csv
 import os
-import  itertools
+import itertools
 import time
 import configparser
 import argparse
@@ -91,7 +91,7 @@ class CsvVdbConvertor:
                             column_values = list(self._sub_entities.values())[column_idx]
                             column_values.append(column_value)
 
-                        #clovaX embedding 처리 요청, 여기서의 csv_offset은 보여지는 값으로 실제 csv 라인수를 마추기 위해 +2함(타이틀 라인과 index 0 시작을 감안하여)
+                        #clovaX embedding 처리 요청, 여기서의 csv_offset은 보여지는 값으로 실제 csv 라인 번호를 마추기 위해 +2함(타이틀 라인과 index 0 시작을 감안하여)
                         self._result_id, result_status_code, result_vector = self._class_clovax_embedding_executor.execute(
                             row_idx + csv_offset + 2, self._sub_entities[embedding_target_column_name][len(self._sub_entities[embedding_target_column_name])-1])
 

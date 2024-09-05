@@ -128,7 +128,7 @@ class MilvusCollectionExecutor:
         except Exception as e:
             raise e
 
-# 직접 실행시 RAG 구현을 휘한 milvus collection setting을 함
+# 직접 실행시 RAG 구현을 휘한 milvus collection 환경을 셋팅함
 # python milvus_collection_executor.py --option dropall
 def main():
     try:
