@@ -107,6 +107,7 @@ def rag_service(user_request):
         }
 
         completion_result = _class_clovax_completion_executor.execute(request_data, completion_response_type)
+        logger.debug(f"rag completion_result : {completion_result}")
         return completion_result
 
     except Exception as e:

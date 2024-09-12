@@ -18,4 +18,11 @@ def api_recommender(user_request : UserRequest):
     logger.info(f"UserRequest: {user_request}")
 
     content = user_request.content
-    return {"reply" : rag_service(content)}
+    rag_result = rag_service(content)
+    return {"reply" : adjust_reply(rag_result)}
+
+def adjust_reply(origin_reply):
+    if origin_reply is not None:
+        origin_reply = origin_reply.replace('https://***.****.**.**', 'https://www.data.go.kr')
+
+    return origin_reply
