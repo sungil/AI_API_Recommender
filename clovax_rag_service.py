@@ -68,7 +68,7 @@ def initiate(is_console_mode = True):
 
         #프로퍼티 파일에 등록된 system role content 내용 중 몇 번째를 적용 할지 실행 argument 로 받아 처리함
         global system_role_contents
-        system_role_contents = clovax_completion_config[f'system_role_contents_{app_ini_system_role_contents_num}'].replace("\n", "")
+        system_role_contents = clovax_completion_config[f'system_role_contents_{app_ini_system_role_contents_num}']#.replace("\n", "")
         logger.info(f"System_role_contents_{app_ini_system_role_contents_num} has been applied.")
 
     except Exception as e:
@@ -83,14 +83,14 @@ def rag_service(user_request):
         rag_reference_data = _class_milvus_collection_executor.search_embedding(result_vector,
                                                                                 app_common_config["embedding_result_column_name"],
                                                                                 ['ID', 'TITLE', 'ORG', 'DESC', 'URL'],
-                                                                                10) #todo: limit 갯수에 따라 오류가 나는 이유 확인 필요
+                                                                                20) #todo: limit 갯수에 따라 오류가 나는 이유 확인 필요
         logger.info(f"rag reference data size : {len(rag_reference_data)}")
         logger.debug(f"rag result :")
         logger.debug(f"{rag_reference_data}")
 
         preset_text = [
             {"role" : "system", "content" : system_role_contents},
-            {"role" : "system", "content" : f"질문 답변을 위한 reference : {rag_reference_data}"},
+            {"role" : "system", "content" : f"reference 데이터: {rag_reference_data}"},
             {"role" : "user", "content" : user_request}
         ]
 
@@ -98,11 +98,11 @@ def rag_service(user_request):
             'messages': preset_text,
             'topP': 0.8,
             'topK': 0,
-            'maxTokens': 256,
+            'maxTokens': (256*5),
             'temperature': 0.98,
             'repeatPenalty': 5.0,
             'stopBefore': [],
-            'includeAiFilters': True,
+            'includeAiFilters': False,
             'seed': 0
         }
 
