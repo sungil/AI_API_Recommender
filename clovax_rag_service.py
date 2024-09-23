@@ -115,7 +115,7 @@ def rag_service(user_request):
 
 
 # RAG 기능을 제공하는 서비스
-# python clovax_rag_service.py
+# python clovax_rag_service.py --srcn 1
 def main():
     try:
         initiate(is_console_mode=True)
