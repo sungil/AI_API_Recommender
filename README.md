@@ -8,7 +8,7 @@
 - API 관련 벡터 데이터를 저장하기 위한 Vector DB 설치 필요
   - https://github.com/milvus-io/milvus/releases 에서 Milvus 도커 설치를 위한 milvus-standalone-docker-compose.yml 파일 다운로드
   - 해당 파일로 Docker 설치를 위해 Docker, Docker Desktop 설치가 필요함 (설명 생략)
-  - `docker compose up -d` (compose 파일이 있는 디렉토리에서 실행)
+  - `docker compose -f milvus-standalone-docker-compose.yml up -d` (compose 파일이 있는 디렉토리에서 실행)
   - Milvus DB Docker 실행 확인
 - **app.ini 파일의 일부 내용(update with your information 로 표기된 부분) 은 clovax 본인 계정 정보에 맞게 수정해야 합니다.**
 - python milvus_collection_executor.py --option dropall 명령을 통해 필요한 collection 과 index를 milvus DB에 생성 합니다.
